@@ -1,5 +1,7 @@
 package com.devsuperior.movieflix.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +29,7 @@ public class UserController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<UserDTO> insert(@RequestBody UserInsertDTO insertDTO){
+	public ResponseEntity<UserDTO> insert(@Valid @RequestBody UserInsertDTO insertDTO){
 		UserDTO dto = new UserDTO();
 		dto = service.insert(insertDTO);
 		return ResponseEntity.ok(dto);
