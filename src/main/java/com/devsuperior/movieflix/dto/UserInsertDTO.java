@@ -4,7 +4,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.devsuperior.movieflix.entities.User;
+import com.devsuperior.movieflix.services.validation.UserInsertValid;
 
+@UserInsertValid
 public class UserInsertDTO extends UserDTO{
 	private static final long serialVersionUID = 1L;
 
