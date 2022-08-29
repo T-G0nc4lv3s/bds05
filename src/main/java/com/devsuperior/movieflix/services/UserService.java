@@ -66,6 +66,12 @@ public class UserService implements UserDetailsService{
 			throw new ResourceNotFoundException("Id not found " + id);
 		}
 	}
+	
+	@Transactional
+	public UserDTO getProfile() {
+		User user = authService.authenticated();
+		return new UserDTO(user);
+	}
 
 	private void dtoToEntity(UserUpdateDTO dto, User user) {
 		user.setName(dto.getName());
