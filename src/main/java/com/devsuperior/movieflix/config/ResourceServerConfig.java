@@ -20,7 +20,7 @@ public class ResourceServerConfig  extends ResourceServerConfigurerAdapter{
 	
 	private static final String[] PUBLIC_OR_VISITOR = {"/movies/**"};
 	
-	private static final String[] VISITOR_OR_MEMBER = {"/movies/**", "/users/**"};
+	private static final String[] VISITOR_OR_MEMBER = {"/users/**"};
 	
 	@Autowired
 	private Environment env;
